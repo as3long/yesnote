@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "standard",
+    "plugin:vue/recommended"
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "comma-dangle":"off",
+    "space-before-function-paren":"off",
+    "vue/max-attributes-per-line": "off"
+  }
+}
