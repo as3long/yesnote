@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,
-      <br />check out the
+      <br>check out the
       <a
         href="https://cli.vuejs.org"
         target="_blank"
@@ -12,25 +12,37 @@
     </p>
     <van-row class="my-box">
       <van-col span="4">
-        <van-button type="default" @click="showPopup">弹出层</van-button>
+        <van-button type="default" @click="showPopup">
+          弹出层
+        </van-button>
       </van-col>
       <van-col span="4">
-        <van-button type="primary">主要按钮</van-button>
+        <van-button type="primary">
+          主要按钮
+        </van-button>
       </van-col>
       <van-col span="4">
-        <van-button type="info">信息按钮</van-button>
+        <van-button type="info">
+          信息按钮
+        </van-button>
       </van-col>
       <van-col span="4">
-        <van-button type="warning">警告按钮</van-button>
+        <van-button type="warning">
+          警告按钮
+        </van-button>
       </van-col>
       <van-col span="4">
-        <van-button type="danger">危险按钮</van-button>
+        <van-button type="danger">
+          危险按钮
+        </van-button>
       </van-col>
       <van-col span="4">
         <van-icon name="chat-o" />
       </van-col>
     </van-row>
-    <van-popup v-model="show" position="top" :style="{ height: '30%' }">白日依山尽，黄河入海流。欲穷千里目，更上一层楼。</van-popup>
+    <van-popup v-model="show" position="top" :style="{ height: '30%' }">
+      白日依山尽，黄河入海流。欲穷千里目，更上一层楼。
+    </van-popup>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li>
@@ -93,14 +105,14 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String
   },
   data() {
     return {
       show: false,
-    }
+    };
   },
   methods: {
     showPopup() {
