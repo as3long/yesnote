@@ -12,8 +12,14 @@ import 'vant/lib/index.css';
 import router from './router';
 /* -----  vant style end  ----- */
 
+import Default from './layouts/Default.vue';
+import TabBar from './layouts/Tabbar.vue';
+
 Vue.use(Vant);
 Vue.use(Vuex);
+
+Vue.component('default-layout', Default);
+Vue.component('tabbar-layout', TabBar);
 
 Vue.config.productionTip = false;
 

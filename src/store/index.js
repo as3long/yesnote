@@ -10,8 +10,8 @@ export default new Vuex.Store({
   state: {
     todos: JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '[]'),
     userState: {
-      uuid: '',
-      token: '',
+      uuid: localStorage.getItem('uuid') || '',
+      token: localStorage.getItem('token') || '',
     },
     toastText: '',
     redirect: '',

@@ -1,32 +1,33 @@
-const axios = require('axios');
-// const utils = require('axios/lib/utils');
-const md5 = require('blueimp-md5');
+import axios from 'axios';
+import md5 from 'blueimp-md5';
+import store from '../store/index';
 
 const instance = axios.create({
   baseURL: 'http://141.164.42.156:30032/proxy',
+  // baseURL: 'http://127.0.0.1:30032/proxy',
 });
 
-const userState = {
-  uuid: '',
-  token: '',
-};
+instance.interceptors.request.use(
+  config => {
+    console.log(store);
+    config.params = config.params || {};
+    if (store.state.userState.uuid !== '') {
+      config.params.uuid = store.state.userState.uuid;
+      if (config.data && config.data.data) {
+        config.data.data.muuid = store.state.userState.uuid;
+      }
+    }
+    if (store.state.userState.token !== '') {
+      config.params.token = store.state.userState.token;
+    }
+    return config;
+  },
+  error => Promise.reject(error)
+);
 
-// instance.interceptors.request.use(
-//   config => {
-//     config.params = enryptData(config.params, config.data);
-//     if (config.params.uuid === '') {
-//       delete config.params.uuid;
-//     }
-//     if (config.params.token === '') {
-//       delete config.params.token;
-//     }
-//     return config;
-//   },
-//   error => Promise.reject(error)
-// );
+const api = instance;
 
-module.exports = {
-  api: instance,
-  userState,
+export {
+  api,
   md5,
 };

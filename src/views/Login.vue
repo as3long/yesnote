@@ -1,5 +1,9 @@
 <template>
   <div>
+    <van-nav-bar
+      title="登录"
+      style="margin-bottom: 32px;"
+    />
     <van-form @submit="onSubmit">
       <van-field
         v-model="username"
@@ -16,7 +20,7 @@
         placeholder="密码"
         :rules="[{ required: true, message: '请填写密码' }]"
       />
-      <div style="margin: 16px;">
+      <div style="margin: 32px;">
         <van-button round block type="info" native-type="submit">
           登录
         </van-button>
